@@ -12,8 +12,6 @@ config :logger, level: :warn
 # Configure your database
 config :fix_my_life, FixMyLife.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
   database: "fix_my_life_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
