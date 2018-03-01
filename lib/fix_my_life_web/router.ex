@@ -8,6 +8,8 @@ defmodule FixMyLifeWeb.Router do
   scope "/", FixMyLifeWeb do
     pipe_through :api
     resources "/users", UserController, except: [:edit, :new]
-    resources "/lists", ListController, except: [:edit, :new]
+    resources "/lists", ListController, except: [:edit, :new] do
+      resources "/items", ItemController, except: [:edit, :new]
+    end
   end
 end
