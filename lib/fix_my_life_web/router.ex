@@ -5,7 +5,10 @@ defmodule FixMyLifeWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", FixMyLifeWeb do
+  scope "/", FixMyLifeWeb do
     pipe_through :api
+    resources "/todos", ToDoListController, except: [:edit, :new] do
+      resources "/items", ToDoItemController, except: [:edit, :new]
+    end
   end
 end
